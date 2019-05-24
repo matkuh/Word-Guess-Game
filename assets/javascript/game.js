@@ -226,9 +226,10 @@ var letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 
 var wins = 0;
 var losses = 0;
 var guesses = 0;
-var letsGuessed = 0;
+var letsGuessed = [];
 var numDashes = [];
 var randWord = "";
+var randWordArray = [];
 
 
 
@@ -237,15 +238,18 @@ function randWord() {  //function to choose a random word from words array
 }
 
 function setNumDashes() {           //function to set the number of dashes equal to the amount of characters in the random word
-    numDashes = randWord.length?
+    numDashes = randWord.length 
 }
 
 function letsGuessed() {
-    document.querySelector("#letsguessed").innerHTML = "Your Guesses so Far: " + guessed;
+    document.querySelector("#letsguessed").innerHTML = "Your Guesses so Far: " + letsGuessed;
 }
 
+function numGuessLeft() {
+    document.querySelector("#guessesleft").innerHTML = "Guesses Left: " + guesses;
+}
 
-function gameStart() { //function to start game: set guesses to x, pick a random word, display (.querySelector) number of dashes,
+function gameStart() { //function to start game: set guesses to x, pick a random word (randword function), display (.querySelector) number of dashes,
 
 }
 
@@ -253,9 +257,19 @@ document.onkeyup = function(event){
     var userInput = event.key();
 if (computerChoices.includes(userInput) && guessed.includes(userInput) === false) {
     letsGuessed.push(userInput)
+    guesses--
+    numGuessLeft()
+    
+} if ((userInput) === (randWordArray[i])) {//if statement where if letter user guessed = a letter in the randWordArray
+    letsGuessed.push(userInput)
+    letsGuessed()
+    numGuessLeft()
+    //need a function here that will document.querySelector that letter to its proper place, not sure how to do this
+
+} else if ((userInput) !== (randWordArray[i])) { //else if letter user guessed does not equal a letter in the array,
+    letsGuessed.push(userInput)
+    guesses--
 }
 
+
 }
-
-
-
