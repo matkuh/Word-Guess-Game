@@ -1,0 +1,19 @@
+img {
+    height: 450px;
+}
+.mt-0 {
+    font-size: 70px;
+}
+.mb-0 {
+    font-size: 40px;
+}
+.inputs {
+    font-size: 30px;
+    color: blue;
+    text-align: center;
+}
+#wordlength {
+    font-size: 30px;
+    margin-left: 9%;
+    margin-top: 30%;
+}
