@@ -227,10 +227,35 @@ var wins = 0;
 var losses = 0;
 var guesses = 0;
 var letsGuessed = 0;
-var wordLength = 0;
+var numDashes = [];
+var randWord = "";
 
-function randWord() {
+
+
+function randWord() {  //function to choose a random word from words array
     randWord = words[Math.floor(Math.random() * words.length)];
 }
+
+function setNumDashes() {           //function to set the number of dashes equal to the amount of characters in the random word
+    numDashes = randWord.length?
+}
+
+function letsGuessed() {
+    document.querySelector("#letsguessed").innerHTML = "Your Guesses so Far: " + guessed;
+}
+
+
+function gameStart() { //function to start game: set guesses to x, pick a random word, display (.querySelector) number of dashes,
+
+}
+
+document.onkeyup = function(event){
+    var userInput = event.key();
+if (computerChoices.includes(userInput) && guessed.includes(userInput) === false) {
+    letsGuessed.push(userInput)
+}
+
+}
+
 
 
